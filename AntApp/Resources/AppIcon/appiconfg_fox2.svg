@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg width="660" height="660" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="polygons" stroke="white" stroke-width="2" transform="translate(0, 35) translate(30)">
+   <title>Polygons</title>
+   <polygon fill="#ed6300" id="left-jaw" points="300,480 90,310 145,270"/>
+   <polygon fill="#ed6300" id="left-eye" points="300,480 145,270 240,175"/>
+   <polygon fill="#ed6300" id="center" points="300,480 240,175 360,175"/>
+   <polygon fill="#ed6300" id="right-eye" points="300,480 360,175 480,110 455,270"/>
+   <polygon fill="#ed6300" id="right-jaw" points="300,480 455,270 510,310"/>
+   <polygon fill="white" id="nose" points="300,480 237,429 300,384 363,429"/>
+   <polygon fill="white" id="left-ear" points="145,270 120,110 240,175"/>
+   <polygon fill="white" id="right ear" points="360,175 480,110 455,270"/>
+  </g>
+ </g>
+</svg>
