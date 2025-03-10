@@ -8,6 +8,12 @@ Combined mobile (Android) and web experiments
 - MudBlazor Templates
 - Solution directory - ex. `~/Projects/MauiAntics` - start point for all commands
 
+### Random commands repo
+- initiate emulator `sdkmanager "emulator" "system-images;android-34;google_apis;x86_64"`
+- list emulator device definitions `avdmanager list device`
+- create emulator `avdmanager create avd -n pixel4a -d 24 -k "system-images;android-34;google_apis;x86_64"`
+- run MAUI app `dotnet build -t:Run -f net8.0-android`
+
 ## 0 - Solution setup
 - `dotnet new mudblazor --interactivity Server --all-interactive -o AntWeb`
 - `dotnet new maui-blazor -o AntApp`
