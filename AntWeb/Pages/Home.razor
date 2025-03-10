@@ -3,4 +3,13 @@
 <PageTitle>Home</PageTitle>
 
 <MudText Typo="Typo.h3" GutterBottom="true">Congratulations!</MudText>
-<MudText>You've made it this far...</MudText>
+<MudText>You've made it this far.</MudText>
+
+<AuthorizeView>
+    <Authorized>
+        <MudText Class="mt-4">Welcome @context.User?.Identity?.Name.</MudText>
+    </Authorized>
+    <NotAuthorized>
+        <MudText Class="mt-4">All without authenticating...</MudText>
+    </NotAuthorized>
+</AuthorizeView>

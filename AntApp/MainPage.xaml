@@ -6,10 +6,10 @@
              BackgroundColor="{DynamicResource PageBackgroundColor}">
 
     <BlazorWebView x:Name="blazorWebView"
-            HostPage="wwwroot/index.html">
+                   HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
             <RootComponent Selector="#app"
-                    ComponentType="{x:Type local:Routes}"/>
+                           ComponentType="{x:Type local:Components.Layout.Routes}"/>
         </BlazorWebView.RootComponents>
     </BlazorWebView>
 

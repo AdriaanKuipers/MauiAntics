@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
 
 namespace AntApp;
@@ -21,6 +22,10 @@ public static class MauiProgram
 		builder.Services.AddBlazorWebViewDeveloperTools();
 		builder.Logging.AddDebug();
 #endif
+
+		// --- AUTH ---
+		builder.Services.AddAuthorizationCore();
+		builder.Services.AddScoped<AuthenticationStateProvider, AntAuthStateProvider>();
 
 		builder.Services.AddMudServices();
 
