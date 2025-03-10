@@ -2,6 +2,9 @@
 
 Combined mobile (Android) and web experiments
 
+## TODO
+- MAUI fonts?
+
 ## Initial setup
 - .NET 8
 - .NET 8 MAUI ready for Android development. (JAVA + Android)
