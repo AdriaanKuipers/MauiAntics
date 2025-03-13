@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "../AppData/Roaming/Code/User/workspaceStorage/af2315ce20662b9c022c17c6ccda6671/ms-dotnettools.csdevkit/MauiAntics.sln",
+                "./MauiAntics.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "../AppData/Roaming/Code/User/workspaceStorage/af2315ce20662b9c022c17c6ccda6671/ms-dotnettools.csdevkit/MauiAntics.sln",
+                "./MauiAntics.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "../AppData/Roaming/Code/User/workspaceStorage/af2315ce20662b9c022c17c6ccda6671/ms-dotnettools.csdevkit/MauiAntics.sln"
+                "./MauiAntics.sln"
             ],
             "problemMatcher": "$msCompile"
         }

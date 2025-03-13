@@ -8,10 +8,13 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="../AntCore/Antcore.csproj" />
-
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.13" />
 
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\AntCore\AntCore.csproj" />
   </ItemGroup>
 </Project>
