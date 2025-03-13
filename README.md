@@ -61,3 +61,4 @@ Create AntCore, join all projects in one solution and setup basic local authenti
 
 ### AntApp
 - AntCore reference
+- AntAuthStateProvider (HttpClientHandler to ignore cert error)

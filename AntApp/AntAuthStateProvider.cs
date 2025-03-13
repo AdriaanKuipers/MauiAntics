@@ -28,7 +28,17 @@ public class AntAuthStateProvider : AuthenticationStateProvider
             var authResult = await WebAuthenticator.Default.AuthenticateAsync(new("https://10.0.2.2:5001/auth/mobilelogin"), new("ant://"));
 
             // Get user info from auth/me
-            var client = new HttpClient();
+
+            // DEBUG - Ignore certificate errors
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+            {
+                if (cert != null && cert.Issuer.Equals("CN=localhost"))
+                    return true;
+                return errors == System.Net.Security.SslPolicyErrors.None;
+            };
+
+            var client = new HttpClient(handler);
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {authResult.AccessToken}");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var user = await client.GetFromJsonAsync<AntUser>("https://10.0.2.2:5001/auth/me");
