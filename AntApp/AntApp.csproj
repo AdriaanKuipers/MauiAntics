@@ -50,8 +50,10 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui"
             Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+    </ItemGroup>
 
-        <PackageReference Include="MudBlazor" Version="8.3.0" />
+    <ItemGroup>
+      <ProjectReference Include="..\AntCore\AntCore.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntCore", "AntCore\AntCore.csproj", "{37F6776B-B9A0-42B9-B149-291D047D77E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntWeb", "AntWeb\AntWeb.csproj", "{CF7DCBDD-60C4-4205-AF51-FE386098D549}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntApp", "AntApp\AntApp.csproj", "{F6786336-9C26-4DAA-B49F-72E403B30D04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37F6776B-B9A0-42B9-B149-291D047D77E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F6776B-B9A0-42B9-B149-291D047D77E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F6776B-B9A0-42B9-B149-291D047D77E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F6776B-B9A0-42B9-B149-291D047D77E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7DCBDD-60C4-4205-AF51-FE386098D549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7DCBDD-60C4-4205-AF51-FE386098D549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7DCBDD-60C4-4205-AF51-FE386098D549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7DCBDD-60C4-4205-AF51-FE386098D549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6786336-9C26-4DAA-B49F-72E403B30D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6786336-9C26-4DAA-B49F-72E403B30D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6786336-9C26-4DAA-B49F-72E403B30D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6786336-9C26-4DAA-B49F-72E403B30D04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
