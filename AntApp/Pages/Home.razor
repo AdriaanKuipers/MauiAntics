@@ -7,9 +7,28 @@
 
 <AuthorizeView>
     <Authorized>
-        <MudText Class="mt-4">Welcome @context.User?.Identity?.Name.</MudText>
+        <MudText Class="my-4">Welcome @context.User?.Identity?.Name.</MudText>
+        <MudButton OnClick=@CheckFingers Variant=@Variant.Filled Color=@Color.Primary>Fingerprint</MudButton>
+        @if (hasFingers)
+        {
+            <MudText Class="mt-4">Secrets...</MudText>
+        }
     </Authorized>
     <NotAuthorized>
         <MudText Class="mt-4">All without authenticating...</MudText>
     </NotAuthorized>
 </AuthorizeView>
+
+@code
+{
+    private bool hasFingers;
+
+    private async Task CheckFingers()
+    {
+        var fingerprintable = await BiometricService.GetAuthenticationStatus();
+        if (fingerprintable)
+        {
+            hasFingers = await BiometricService.Authenticate(CancellationToken.None);
+        }
+    }
+}

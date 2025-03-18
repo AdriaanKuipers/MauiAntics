@@ -12,6 +12,8 @@
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
         <Nullable>disable</Nullable>
 
+        <NoWarn>IDE0130</NoWarn>
+
         <!-- Display name -->
         <ApplicationTitle>AntApp</ApplicationTitle>
 
@@ -27,8 +29,7 @@
     <ItemGroup>
         <!-- App Icon -->
         <MauiIcon Include="Resources\AppIcon\appicon.svg"
-            ForegroundFile="Resources\AppIcon\appiconfg.svg"
-            ForegroundScale="0.666" />
+            ForegroundFile="Resources\AppIcon\appiconfg.svg" ForegroundScale="0.666" />
 
         <!-- Splash Screen -->
         <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#7e6fff" />
@@ -50,10 +51,13 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui"
             Version="$(MauiVersion)" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+
+        <PackageReference Include="Xamarin.AndroidX.Biometric" Version="1.1.0.27" />
+        <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.6" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\AntCore\AntCore.csproj" />
+        <ProjectReference Include="..\AntCore\AntCore.csproj" />
     </ItemGroup>
 
 </Project>

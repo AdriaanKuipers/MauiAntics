@@ -45,7 +45,7 @@ Create two basic MudBlazor applications with a counter page and a home page
 - Icon antics
 
 
-### 2 - Authentication and double debug
+## 2 - Authentication and double debug
 Create AntCore, join all projects in one solution and setup basic local authentication for both applications.
 Debug both AntApp and AntWeb from a single command.
 
@@ -69,3 +69,9 @@ Debug both AntApp and AntWeb from a single command.
 - AntCore reference & reference cleanup
 - MauiProgram, MainActivity, AndroidManifest & AntAuthStateProvider (HttpClientHandler to ignore cert error)
 - Update MainLayout, Routes, _Import & Home
+
+## 3 - Biometrics
+Force fingerprint authentication for certain pages.
+Renew after suspend and app switch
+
+- Xamarin.AndroidX.Biometric => requires wasi-experimental => `dotnet workload restore`
