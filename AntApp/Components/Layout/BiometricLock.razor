@@ -1,0 +1,46 @@
+@ChildContent
+
+<MudDialog @bind-Visible="Biometric.FingersConfirmed" Options="_dialogOptions">
+    <DialogContent>
+        <MudStack Row AlignItems=@AlignItems.Center Justify=@Justify.Center>
+            <MudText Class="my-4">Unsure about your fingers.</MudText>
+            <MudButton OnClick=@CheckFingers Variant=@Variant.Filled Color=@Color.Primary>Check fingers</MudButton>
+        </MudStack>
+    </DialogContent>
+</MudDialog>
+
+@code
+{
+    [Inject] private BiometricService Biometric { get; set; }
+    [Inject] private LifecycleService Lifecycle { get; set; }
+
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    private readonly DialogOptions _dialogOptions = new() { FullScreen = true, NoHeader = true };
+
+
+    private async Task CheckFingers()
+    {
+        var fingerprintable = await BiometricService.GetAuthenticationStatus();
+        if (fingerprintable)
+        {
+            await Biometric.Authenticate(CancellationToken.None);
+        }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Lifecycle.Deactivated += HandleDeactivated;
+        }
+    }
+
+    // TODO: This runs on resume, "leaking" biometric content for a split second
+    // Force update after pause
+    private void HandleDeactivated()
+    {
+
+        StateHasChanged();
+    }
+}

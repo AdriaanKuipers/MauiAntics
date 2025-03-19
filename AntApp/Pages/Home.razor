@@ -8,27 +8,48 @@
 <AuthorizeView>
     <Authorized>
         <MudText Class="my-4">Welcome @context.User?.Identity?.Name.</MudText>
-        <MudButton OnClick=@CheckFingers Variant=@Variant.Filled Color=@Color.Primary>Fingerprint</MudButton>
-        @if (hasFingers)
+        @if (Biometric.FingersConfirmed)
         {
-            <MudText Class="mt-4">Secrets...</MudText>
+            <MudText Class="my-4">Secrets...</MudText>
+        }
+        else
+        {
+            <MudButton OnClick=@CheckFingers Variant=@Variant.Filled Color=@Color.Primary>Fingerprint</MudButton>
         }
     </Authorized>
     <NotAuthorized>
-        <MudText Class="mt-4">All without authenticating...</MudText>
+        <MudText Class="my-4">All without authenticating...</MudText>
     </NotAuthorized>
 </AuthorizeView>
+<MudButton OnClick=@StateHasChanged Variant=@Variant.Filled Color=@Color.Primary>Update State</MudButton>
 
 @code
 {
-    private bool hasFingers;
+    [Inject] private BiometricService Biometric { get; set; }
+    [Inject] private LifecycleService Lifecycle { get; set; }
 
     private async Task CheckFingers()
     {
         var fingerprintable = await BiometricService.GetAuthenticationStatus();
         if (fingerprintable)
         {
-            hasFingers = await BiometricService.Authenticate(CancellationToken.None);
+            await Biometric.Authenticate(CancellationToken.None);
         }
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Lifecycle.Deactivated += HandleDeactivated;
+        }
+    }
+
+    // TODO: This runs on resume, "leaking" biometric content for a split second
+    // Force update after pause
+    private void HandleDeactivated()
+    {
+
+        StateHasChanged();
     }
 }

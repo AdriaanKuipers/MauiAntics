@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Components.Authorization;
+﻿using AndroidX.Lifecycle;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui.LifecycleEvents;
 using MudBlazor.Services;
 
 namespace AntApp;
@@ -23,9 +25,12 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		builder.Services.AddSingleton<LifecycleService>();
+
 		// --- AUTH ---
 		builder.Services.AddAuthorizationCore();
 		builder.Services.AddScoped<AuthenticationStateProvider, AntAuthStateProvider>();
+		builder.Services.AddSingleton<BiometricService>();
 
 		builder.Services.AddMudServices();
 

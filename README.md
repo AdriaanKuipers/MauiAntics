@@ -74,4 +74,4 @@ Debug both AntApp and AntWeb from a single command.
 Force fingerprint authentication for certain pages.
 Renew after suspend and app switch
 
-- Xamarin.AndroidX.Biometric => requires wasi-experimental => `dotnet workload restore`
+- Xamarin.AndroidX.Biometric

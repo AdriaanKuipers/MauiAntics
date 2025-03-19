@@ -26,7 +26,8 @@
 </MudLayout>
 
 @code {
-    [Inject] public AuthenticationStateProvider AuthStateProvider { get; set; }
+    [Inject] private AuthenticationStateProvider AuthStateProvider { get; set; }
+
     private bool _drawerOpen = true;
 
     private void DrawerToggle()

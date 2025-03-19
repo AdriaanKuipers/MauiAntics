@@ -7,6 +7,8 @@ namespace AntApp;
 
 public class BiometricService
 {
+    public bool FingersConfirmed { get; set; }
+
     public static Task<bool> GetAuthenticationStatus()
     {
         if (Platform.CurrentActivity is not AppCompatActivity activity)
@@ -25,7 +27,7 @@ public class BiometricService
         return Task.FromResult(response);
     }
 
-    public static async Task<bool> Authenticate(CancellationToken token)
+    public async Task<bool> Authenticate(CancellationToken token)
     {
         if (Platform.CurrentActivity is not AppCompatActivity activity)
         {
@@ -53,6 +55,7 @@ public class BiometricService
             {
                 biometricPrompt.Authenticate(promptInfo);
                 var response = await authCallback.Response.Task;
+                FingersConfirmed = response;
                 return response;
             }
         }
